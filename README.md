@@ -1,4 +1,4 @@
-# ML Engineering PySpark Starter
+# Supply Chain Pipeline Engineering PySpark Starter
 
 A starter project for practicing ML engineering with PySpark.
 The current project is PostgreSQL-first and focused on supply chain analytics with PySpark.
