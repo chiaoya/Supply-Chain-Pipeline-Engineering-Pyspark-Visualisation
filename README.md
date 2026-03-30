@@ -1,8 +1,26 @@
 # Supply Chain Pipeline Engineering PySpark Starter
 
 A starter project for practicing ML engineering with PySpark.
+This repository demonstrates a workflow where Kaggle supply-chain data was first ingested into PostgreSQL for demo and practice purposes, then processed with PySpark for cleaning, transformation and dashboard-ready analytics.
 The current project is PostgreSQL-first and focused on supply chain analytics with PySpark.
 The main goal is to turn operational tables into reusable analytical datasets for demand analysis, fulfillment analysis, and KPI tracking.
+
+## Demo Data Flow
+
+1. Kaggle source CSVs are loaded into a local PostgreSQL database (as a first ingest step).
+2. Data is read from Postgres via JDBC (`orders`, `order_details`, `products`, etc.) and exploratory checks are shown using SQL.
+3. PySpark jobs clean and transform records (e.g. dedup, normalize dates, compute demand metrics).
+4. Aggregated output is written into analytical output folders and displayed through notebook/dashboard visualizations.
+
+## Screenshot (Postgres + PySpark + Dashboard)
+
+![Postgres + PySpark + Dashboard](image/db_screenshot.png)
+
+The `image/` folder includes `db_screenshot.png` showing:
+- PostgreSQL raw table view (ingested Kaggle data)
+- PySpark pipeline status and cleaned output
+- dashboard summary for demand and revenue insights
+
 
 ## Project Structure
 
