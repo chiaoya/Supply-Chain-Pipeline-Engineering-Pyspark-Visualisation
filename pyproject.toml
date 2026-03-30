@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ml_engineering_pyspark"
+version = "0.1.0"
+description = "ML engineering starter pipeline with PySpark"
+requires-python = ">=3.8"
+dependencies = [
+    "pyspark",
+    "pyyaml",
+    "pandas",
+    "pyarrow",
+    "matplotlib",
+    "seaborn",
+    "plotly",
+    "pytest",
+    "ipykernel",
+    "ipywidgets",
+]
+
+[project.scripts]
+ml-engineering-pyspark = "ml_engineering_pyspark.jobs.clean_reviews:main"
+ml-engineering-pyspark-jdbc-test = "ml_engineering_pyspark.jobs.test_jdbc_read:main"
+ml-engineering-pyspark-supply-chain = "ml_engineering_pyspark.jobs.supply_chain_pipeline:main"
+ml-engineering-pyspark-product-demand-base = "ml_engineering_pyspark.jobs.product_demand_base:main"
+ml-engineering-pyspark-product-demand-summary = "ml_engineering_pyspark.jobs.product_demand_summary:main"
+ml-engineering-pyspark-product-demand-monthly = "ml_engineering_pyspark.jobs.product_demand_monthly:main"
+ml-engineering-pyspark-visualize-demand-monthly = "ml_engineering_pyspark.jobs.visualize_product_demand_monthly:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,33 @@
+spark:
+  app_name: supply-chain-pipeline
+
+database:
+  host: localhost
+  port: 5433
+  db: northwind
+  user: postgres
+  password_env: DB_PASSWORD
+
+tables:
+  categories: public.categories
+  customer_customer_demo: public.customer_customer_demo
+  customer_demographics: public.customer_demographics
+  customers: public.customers
+  employee_territories: public.employee_territories
+  employees: public.employees
+  orders: public.orders
+  order_details: public.order_details
+  products: public.products
+  region: public.region
+  shippers: public.shippers
+  stg_dataco_supply_chain: public.stg_dataco_supply_chain
+  suppliers: public.suppliers
+  territories: public.territories
+  us_states: public.us_states
+
+paths:
+  output: output/supply_chain_product_revenue
+  product_demand_base: output/product_demand_base
+  product_demand_summary: output/product_demand_summary
+  product_demand_monthly: output/product_demand_monthly
+  product_demand_monthly_charts: output/product_demand_monthly_charts
